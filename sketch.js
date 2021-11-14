@@ -41,7 +41,7 @@ function setup() {
   leftWall = new Base(100, height - 300, 200, height / 2 + 100);
   rightWall = new Base(width - 100, height - 300, 200, height / 2 + 100);
 
-  bridge = new Bridge(30, {x: 50, y: height / 2 - 140});
+  bridge = new Bridge(19, {x: 50, y: height / 2 - 120});
   jointPoint = new Base(width - 250, height / 2 - 100, 40, 20);
 
   Matter.Composite.add(bridge.body, jointPoint);
@@ -84,6 +84,7 @@ function draw() {
       zombie.velocityX = 0;
       Matter.Body.setVelocity(stone.body, { x: 10, y: -10 });
       zombie.changeImage("sad");
+      zombie.rotation = 90;
       collided = true;
     }
   }
